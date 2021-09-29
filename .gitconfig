@@ -1,0 +1,23 @@
+# This is Git's per-user configuration file.
+[user]
+    name = mustii
+    email = #email here#
+	signingkey = #gpg key here#
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[alias]
+    gr = log --oneline --all --graph --decorate
+    grs = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%G?%Creset %s %C(yellow)%d %C(bold blue)<%an>'
+    merge-pr = merge --no-ff -S
+	commit = commit -S
+
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[pull]
+	ff = only
