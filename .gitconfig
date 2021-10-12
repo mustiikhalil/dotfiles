@@ -1,6 +1,6 @@
 # This is Git's per-user configuration file.
 [user]
-    name = mustii
+    name = #name here#
     email = #email here#
 	signingkey = #gpg key here#
 

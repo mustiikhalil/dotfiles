@@ -16,12 +16,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
   git
-  osx
   gitignore
 )
 
 # Java path
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+# export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,7 +34,8 @@ function cleanup() {
 
 PATH="$GOPATH/bin:$PATH"
 export GOPATH=$HOME/go
-
+export GIT_EDITOR=vim
+alias mac_os_old="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias flatc="/Users/silly/development/flatbuffers/Debug/flatc"
 alias flatc2.0="/Users/silly/development/flatbuffers/Debug/flatc2.0"
 
