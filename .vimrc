@@ -28,6 +28,7 @@ set number
 highlight Normal ctermbg=None
 highlight LineNr ctermfg=DarkGrey
 
+autocmd VimEnter * NERDTree
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd StdinReadPre * let s:std_in=1
