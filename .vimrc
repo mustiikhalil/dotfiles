@@ -12,7 +12,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " General
-
 syntax enable
 filetype plugin indent on
 set smartindent
@@ -29,6 +28,8 @@ highlight Normal ctermbg=None
 highlight LineNr ctermfg=DarkGrey
 
 autocmd VimEnter * NERDTree
+let g:syntastic_swift_checkers = ['swiftpm']
+let g:syntastic_swift_swiftlint_use_defaults = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd StdinReadPre * let s:std_in=1
