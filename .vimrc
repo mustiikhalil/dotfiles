@@ -46,7 +46,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-s> dwis <Esc>0<C-s>
-nnoremap <C-w> i# <Esc>0<C-w>
+nnoremap <C-a> i# <Esc>0<C-a>
 nmap <leader>tt :vert terminal<CR>
 nmap <leader>tn :vsp <CR>
 
