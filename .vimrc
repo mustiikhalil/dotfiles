@@ -29,11 +29,11 @@ set number
 highlight Normal ctermbg=None
 highlight LineNr ctermfg=DarkGrey
 
-autocmd VimEnter * NERDTree
 let g:syntastic_swift_checkers = ['swiftpm']
 let g:syntastic_swift_swiftlint_use_defaults = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeShowHidden=1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTreeToggle | endif
 set statusline+=%#warningmsg#
