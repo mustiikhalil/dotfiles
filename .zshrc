@@ -22,7 +22,7 @@ plugins=(
 # Java path
 # export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
 
-export FZF_DEFAULT_COMMAND="find -L"
+export FZF_DEFAULT_COMMAND='find . -path './.git' -prune -o -print'
 
 source $ZSH/oh-my-zsh.sh
 
