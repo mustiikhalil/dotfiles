@@ -22,6 +22,8 @@ plugins=(
 # Java path
 # export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
 
+export FZF_DEFAULT_COMMAND="find -L"
+
 source $ZSH/oh-my-zsh.sh
 
 alias ls='ls -G'
