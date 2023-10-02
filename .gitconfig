@@ -21,3 +21,13 @@
 	program = gpg
 [pull]
 	ff = only
+
+
+# [core]
+#	repositoryformatversion = 0
+#	filemode = true
+#	bare = true
+#	ignorecase = true
+#	precomposeunicode = true
+# [remote "origin"]
+#	fetch = +refs/heads/*:refs/remote/origin/*
