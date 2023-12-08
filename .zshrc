@@ -34,9 +34,30 @@ function cleanup() {
    rm -rf ~/Library/Developer/Xcode/DerivedData/*
 }
 
+function build_project() {
+  touch .env
+  echo "FORMAT_OPTION=2" > .env
+  scripts/create-rswift-generated.swift && tuist generate --no-open --verbose
+}
+
+function git_nuke() {
+  cd $1
+  branch_name="$(git branch --show-current)"
+  cd ..
+  echo $branch_name
+  git worktree remove $1
+  git worktree prune
+  git branch -D $branch_name
+}
+
+function branch_from() {
+  git worktree add -b $1 $1 $2
+}
+
+export GIT_EDITOR=vim
+
 PATH="$GOPATH/bin:$PATH"
 export GOPATH=$HOME/go
-export GIT_EDITOR=vim
 alias mac_os_old="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias flatc="/Users/silly/development/flatbuffers/Debug/flatc"
 alias flatc2.0="/Users/silly/development/flatbuffers/Debug/flatc2.0"
