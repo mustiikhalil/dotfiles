@@ -11,12 +11,14 @@ Plug 'scrooloose/syntastic'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'google/vim-maktaba'
 Plug 'bazelbuild/vim-bazel'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Swift programming
 " :CocInstall coc-sourcekit
-set autoread
-autocmd FileType swift autocmd BufWritePost *.swift :silent exec "!swiftformat %"
+" set autoread
+" autocmd FileType swift autocmd BufWritePost *.swift :silent exec "!swiftformat %"
+
 " General
 syntax enable
 filetype plugin indent on
