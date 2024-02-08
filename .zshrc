@@ -54,7 +54,7 @@ function branch_from() {
   git worktree add -b $1 $1 $2
 }
 
-export GIT_EDITOR=vim
+export GIT_EDITOR=nvim
 
 PATH="$GOPATH/bin:$PATH"
 export GOPATH=$HOME/go
