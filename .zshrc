@@ -17,10 +17,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   gitignore
+  swiftpm
 )
 
 # Java path
 # export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+
+eval "$(/Users/silly/.local/bin/mise activate zsh)"
 
 export FZF_DEFAULT_COMMAND='find . -path './.git' -prune -o -print'
 
@@ -28,36 +31,22 @@ source $ZSH/oh-my-zsh.sh
 
 alias ls='ls -G'
 
+alias code='code-insiders'
+alias coherent-swift='/Users/silly/development/coherent-swift/.build/debug/coherent-swift'
 source "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 function cleanup() {
    rm -rf ~/Library/Developer/Xcode/DerivedData/*
 }
 
-function build_project() {
-  touch .env
-  echo "FORMAT_OPTION=2" > .env
-  scripts/create-rswift-generated.swift && tuist generate --no-open --verbose
+function gfp() {
+  git fetch && git pull $1
 }
-
-function git_nuke() {
-  cd $1
-  branch_name="$(git branch --show-current)"
-  cd ..
-  echo $branch_name
-  git worktree remove $1
-  git worktree prune
-  git branch -D $branch_name
-}
-
-function branch_from() {
-  git worktree add -b $1 $1 $2
-}
-
-export GIT_EDITOR=vim
 
 PATH="$GOPATH/bin:$PATH"
 export GOPATH=$HOME/go
+export GIT_EDITOR=nvim
+alias vim=nvim
 alias mac_os_old="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias flatc="/Users/silly/development/flatbuffers/Debug/flatc"
 alias flatc2.0="/Users/silly/development/flatbuffers/Debug/flatc2.0"
@@ -69,3 +58,10 @@ alias flatc2.0="/Users/silly/development/flatbuffers/Debug/flatc2.0"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Wasmer
+export WASMER_DIR="/Users/silly/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+# bun completions
+[ -s "/Users/silly/.bun/_bun" ] && source "/Users/silly/.bun/_bun"
