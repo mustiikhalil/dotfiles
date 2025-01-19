@@ -29,5 +29,5 @@
 #	bare = true
 #	ignorecase = true
 #	precomposeunicode = true
-# [remote "origin"]
-#	fetch = +refs/heads/*:refs/remote/origin/*
+[remote "origin"]
+  fetch = +refs/heads/*:refs/remote/origin/*
