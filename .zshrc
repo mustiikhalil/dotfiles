@@ -40,7 +40,7 @@ function cleanup() {
 }
 
 function gfp() {
-  git fetch && git pull $1
+  git fetch $1 && git pull $1 $2
 }
 
 export GOPATH=$HOME/go
