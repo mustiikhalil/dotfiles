@@ -43,8 +43,8 @@ function gfp() {
   git fetch && git pull $1
 }
 
-PATH="$GOPATH/bin:$PATH"
 export GOPATH=$HOME/go
+PATH="$GOPATH/bin:$PATH"
 export GIT_EDITOR=nvim
 alias vim=nvim
 alias mac_os_old="env /usr/bin/arch -x86_64 /bin/zsh --login"
