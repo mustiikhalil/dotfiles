@@ -44,6 +44,10 @@ function gfpu() {
   git fetch upstream && git pull upstream $1
 }
 
+function goland() {
+  open -na "GoLand.app" --args "$@"
+}
+
 export GOPATH=$HOME/go
 PATH="$GOPATH/bin:$PATH"
 export GIT_EDITOR=nvim
