@@ -18,6 +18,7 @@ plugins=(
   git
   gitignore
   swiftpm
+  fzf
 )
 
 eval "$(mise activate zsh)"
