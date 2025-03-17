@@ -29,7 +29,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias ls='ls -G'
 
-alias code='code-insiders'
 alias coherent-swift='~/development/coherent-swift/.build/debug/coherent-swift'
 source "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
